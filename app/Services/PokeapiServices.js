@@ -1,11 +1,12 @@
-// import { ProxyState } from "../AppState";
-import { pokeApi } from "../Services/AxiosServices.js"
+import { ProxyState } from "../AppState.js";
+import Pokemon from "../Models/Pokemon.js";
+import { pokeApi } from "../Services/AxiosServices.js";
 
 class PokeapiService {
 
   async getAllPokemon() {
     let res = await pokeApi.get('')
-    console.log(res.data)
+    ProxyState.pokeapiPokemon = res.data.results
   }
 }
 
